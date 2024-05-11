@@ -2,5 +2,4 @@ function test(name) {
     return `Hello ${name}`;
 }
 
-
-test('Savinda');
+console.log(test('Savinda'));
