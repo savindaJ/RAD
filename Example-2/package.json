@@ -2,9 +2,9 @@
   "name": "example-2",
   "version": "1.0.0",
   "description": "",
-  "main": "test.js",
+  "main": "app.js",
   "scripts": {
-    "start": "tsc test.ts && node test.js"
+    "start": "tsc && node dist/app.js"
   },
   "author": "",
   "license": "ISC"
