@@ -35,7 +35,7 @@ const people = [
 export default function Item() {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <section className="flex flex-end ms-4 mt-4 mb-5 flex-lg-column-reverse">
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add New Item</button>
       </section>

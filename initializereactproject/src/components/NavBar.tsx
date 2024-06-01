@@ -1,21 +1,23 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useNavigate } from 'react-router-dom'
+import { Fragment } from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import Customer from "../pages/Customer";
+import Order from "../pages/Order";
+import Item from "../pages/Item";
 
 const navigation = [
-  { name: 'Dashboard', href: '/', current: false },
-  { name: 'Order', href: '/order', current: false },
-  { name: 'Customer', href: '/customer', current: false },
-  { name: 'Item', href: '/item', current: false },
-]
+  { name: "Dashboard", href: "/", current: false },
+  { name: "Order", href: "/order", current: false },
+  { name: "Customer", href: "/customer", current: false },
+  { name: "Item", href: "/item", current: false },
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function NavBar() {
-
   const navigate = useNavigate();
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -47,14 +49,16 @@ export default function NavBar() {
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <a
-                      onClick={() => navigate(item.href)}
+                        onClick={() => navigate(item.href)}
                         key={item.name}
-                        href={'#'}
+                        href={"#"}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
+                          item.current
+                            ? "bg-gray-900 text-white"
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          "rounded-md px-3 py-2 text-sm font-medium"
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+                        aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
                       </a>
@@ -99,7 +103,10 @@ export default function NavBar() {
                         {({ active }) => (
                           <a
                             href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
                           >
                             Your Profile
                           </a>
@@ -109,7 +116,10 @@ export default function NavBar() {
                         {({ active }) => (
                           <a
                             href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
                           >
                             Settings
                           </a>
@@ -119,7 +129,10 @@ export default function NavBar() {
                         {({ active }) => (
                           <a
                             href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
                           >
                             Sign out
                           </a>
@@ -128,12 +141,14 @@ export default function NavBar() {
                     </Menu.Items>
                   </Transition>
                 </Menu>
-                <button onClick={()=>{
-                  navigate('/login');
-                }} className="bg-gray-800 p-1 ms-5 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <button
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                  className="bg-gray-800 p-1 ms-5 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                >
                   Sign Out
                 </button>
-                  
               </div>
             </div>
           </div>
@@ -146,10 +161,12 @@ export default function NavBar() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
+                    item.current
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    "block rounded-md px-3 py-2 text-base font-medium"
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>
@@ -159,5 +176,5 @@ export default function NavBar() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }

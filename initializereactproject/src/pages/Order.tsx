@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar";
 export default function Order() {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
