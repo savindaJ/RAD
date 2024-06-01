@@ -128,6 +128,12 @@ export default function NavBar() {
                     </Menu.Items>
                   </Transition>
                 </Menu>
+                <button onClick={()=>{
+                  navigate('/login');
+                }} className="bg-gray-800 p-1 ms-5 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                  Sign Out
+                </button>
+                  
               </div>
             </div>
           </div>
