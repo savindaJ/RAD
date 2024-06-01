@@ -51,7 +51,6 @@ export default function NavBar() {
                       <a
                         onClick={() => navigate(item.href)}
                         key={item.name}
-                        href={"#"}
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
