@@ -51,7 +51,7 @@ export default function DashBourd(parentProp: any) {
               product={product}
               func={(prop: any) => {
                 cartItem.push(prop);
-                parentProp.func(prop);
+                parentProp.func(cartItem);
               }}
             />
           ))}

@@ -8,20 +8,21 @@ import Footer from "./Footer";
 import { useState } from "react";
 
 export default function Home() {
-  const [watch, setWatch] = useState([]);
 
-  const list: any = [];
+  let list : any =[];
+
+  const [cart, setCart] = useState(0);
 
   return (
     <>
-      <NavBar cart={watch} />
+      <NavBar list={cart} />
       <Routes>
         <Route
           path="/"
           element={
             <DashBourd
               func={(cart: any) => {
-                setWatch(cart);
+                setCart(list.length);
               }}
             />
           }
