@@ -1,7 +1,8 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import Home from "../pages/Home";
 
 const navigation = [
   { name: "Dashboard", href: "/", current: false },
@@ -14,10 +15,23 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function NavBar() {
+export function hello() {
+  console.log("hello");
+}
+
+export default function NavBar(prop: any) {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log("NavBar useEffect");
+  }, []);
+
   return (
-    <Disclosure as="nav" style={{width:'100vw'}} className="bg-gray-800 fixed top-0 z-10">
+    <Disclosure
+      as="nav"
+      style={{ width: "100vw" }}
+      className="bg-gray-800 fixed top-0 z-10"
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -37,7 +51,7 @@ export default function NavBar() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <h3 className="text-white h-3 w-auto text-2xl font-semibold text-center mb-6">
-                    Watch LK .
+                    Watch LK . {prop.cart.price}
                   </h3>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">

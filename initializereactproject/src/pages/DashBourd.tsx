@@ -3,7 +3,7 @@ import Card from "../components/Card";
 import producs from "../data/products.json";
 import Filter from "../components/Filter";
 
-export default function DashBourd() {
+export default function DashBourd(parentProp: any) {
   const [data, setData] = useState([]);
 
   async function fetchData() {
@@ -22,6 +22,8 @@ export default function DashBourd() {
     console.log("DashBourd useEffect");
     fetchData();
   }, []);
+
+  const cartItem: any = [];
 
   return (
     <div className="bg-white m-auto mt-20">
@@ -44,7 +46,14 @@ export default function DashBourd() {
         </section>
         <div className="flex gap-5 flex-wrap justify-center mt-4 items-center mx-auto">
           {producs.map((product, index) => (
-            <Card key={index} product={product} />
+            <Card
+              key={index}
+              product={product}
+              func={(prop: any) => {
+                cartItem.push(prop);
+                parentProp.func(prop);
+              }}
+            />
           ))}
         </div>
       </section>

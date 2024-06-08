@@ -6,9 +6,9 @@ export default function Filter() {
       className="translate-x-8 mt-12 p-4 border shadow-lg rounded"
       style={{ width: "250px", height: "50vh" }}
     >
-      <p className="p-5">Filter</p>
+      <p className="p-5 text-center underline">Filter</p>
 
-      <div className="flex items-center justify-center mb-4 mt-5">
+      <div className="flex items-center mb-4 mt-5">
         <input
           id="default-checkbox"
           type="checkbox"
@@ -19,7 +19,7 @@ export default function Filter() {
           Kids Clothes
         </label>
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center">
         <input
           id="checked-checkbox"
           type="checkbox"
@@ -30,7 +30,7 @@ export default function Filter() {
           Gents Clothes
         </label>
       </div>
-      <div className="flex items-center mt-4 justify-center">
+      <div className="flex items-center mt-4">
         <input
           id="checked-checkbox"
           type="checkbox"
@@ -39,6 +39,17 @@ export default function Filter() {
         />
         <label htmlFor="checked-checkbox" className="ms-2 text-sm font-medium">
           Laides Clothes
+        </label>
+      </div>
+      <div className="flex items-center mt-4 justify-center">
+        <input
+          id=""
+          type="range"
+          value="10"
+          className=""
+        />
+        <label htmlFor="checked-checkbox" className="ms-2 text-sm font-medium">
+          Price Lavel
         </label>
       </div>
     </div>
