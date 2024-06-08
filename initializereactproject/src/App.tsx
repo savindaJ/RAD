@@ -1,9 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
-import Customer from './pages/Customer';
-import Order from './pages/Order';
-import Item from './pages/Item';
 import SignIn from './pages/SignIn';
 
 function App() {
