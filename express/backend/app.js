@@ -6,10 +6,17 @@ var logger = require("morgan");
 var cors = require("cors");
 
 var indexRouter = require("./routes/index");
+/**
+ * This is a sample route that will be used to get all the products
+ */
 var usersRouter = require("./routes/users");
 var productsRouter = require("./routes/product.service");
 
 var app = express();
+
+/**
+ * This is a middleware function that will be executed for every request to the app.
+ */
 
 app.use(cors());
 
@@ -25,6 +32,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+/**
+ * This is a sample route that will be used to get all the products
+ */
 app.use("/products", productsRouter);
 
 // catch 404 and forward to error handler

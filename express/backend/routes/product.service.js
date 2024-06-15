@@ -1,7 +1,14 @@
 const express = require('express');
 const router = express.Router();
-
+/**
+ * This is a sample route that will be used to get all the products
+ */
 router.get('/all', function(req, res, next) {
+
+/**
+ * This is a sample data that will be sent
+ */
+
     const data = [
         {
           "name": "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
@@ -79,9 +86,16 @@ router.get('/all', function(req, res, next) {
             "https://cdn.buyabans.com/media/catalog/product/cache/b26914b4315099761016f66ddcabadb6/w/e/web_7_42.jpg",
           "rating": 5,
           "price": 123
-        }
+        },
+        {
+            "name": "Apple Watch, Aluminium Case, starling Sport",
+            "image":
+              "https://cdn.buyabans.com/media/catalog/product/cache/b26914b4315099761016f66ddcabadb6/w/e/web_7_42.jpg",
+            "rating": 5,
+            "price": 123
+          }
       ];
       res.send(data);
 });
-
+// Export the router
 module.exports = router;
