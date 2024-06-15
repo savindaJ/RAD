@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
-import producs from "../data/products.json";
 import Filter from "../components/Filter";
+import axios from "axios";
 
 export default function DashBourd(parentProp: any) {
   const [data, setData] = useState([]);
@@ -19,9 +19,16 @@ export default function DashBourd(parentProp: any) {
   }
 
   useEffect(() => {
-    console.log("DashBourd useEffect");
-    fetchData();
+    getAllProduct();
   }, []);
+
+  function getAllProduct(){
+    axios.get('http://localhost:4000/products/all').then((response) => {
+      setData(response.data);
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
 
   const cartItem: any = [];
 
@@ -45,7 +52,7 @@ export default function DashBourd(parentProp: any) {
           <Filter />
         </section>
         <div className="flex gap-5 flex-wrap justify-center mt-4 items-center mx-auto">
-          {producs.map((product, index) => (
+          {data.map((product, index) => (
             <Card
               key={index}
               product={product}
