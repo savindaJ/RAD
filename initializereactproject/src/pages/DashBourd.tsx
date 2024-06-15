@@ -20,14 +20,17 @@ export default function DashBourd(parentProp: any) {
 
   useEffect(() => {
     getAllProduct();
-  }, []);
+  },[]);
 
-  function getAllProduct(){
-    axios.get('http://localhost:4000/products/all').then((response) => {
-      setData(response.data);
-    }).catch((error) => {
-      console.log(error);
-    });
+  function getAllProduct() {
+    axios
+      .get("http://localhost:4000/products/all")
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   const cartItem: any = [];
@@ -52,16 +55,20 @@ export default function DashBourd(parentProp: any) {
           <Filter />
         </section>
         <div className="flex gap-5 flex-wrap justify-center mt-4 items-center mx-auto">
-          {data.map((product, index) => (
-            <Card
-              key={index}
-              product={product}
-              func={(prop: any) => {
-                cartItem.push(prop);
-                parentProp.func(cartItem);
-              }}
-            />
-          ))}
+          {data === null ? (
+            <h1>No One</h1>
+          ) : (
+            data.map((product, index) => (
+              <Card
+                key={index}
+                product={product}
+                func={(prop: any) => {
+                  cartItem.push(prop);
+                  parentProp.func(cartItem);
+                }}
+              />
+            ))
+          )}
         </div>
       </section>
       <section className="flex justify-center mt-20">

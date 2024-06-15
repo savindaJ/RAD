@@ -11,6 +11,7 @@ var indexRouter = require("./routes/index");
  */
 var usersRouter = require("./routes/users");
 var productsRouter = require("./routes/product.service");
+var contactRouter = require("./routes/contact.service");
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/contact",contactRouter);
 /**
  * This is a sample route that will be used to get all the products
  */
