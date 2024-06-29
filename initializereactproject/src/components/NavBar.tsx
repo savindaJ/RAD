@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 
 const navigation = [
   { name: "Dashboard", href: "/", current: false },
-  { name: "Order", href: "/order", current: false },
-  { name: "Customer", href: "/customer", current: false },
-  { name: "Item", href: "/item", current: false },
+  // { name: "Order", href: "/order", current: false },
+  // { name: "Customer", href: "/customer", current: false },
+  // { name: "Item", href: "/item", current: false },
 ];
 
 function classNames(...classes: string[]) {

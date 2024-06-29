@@ -26,6 +26,7 @@ export default function DashBourd(parentProp: any) {
     axios
       .get("http://localhost:4000/products/all")
       .then((response) => {
+        console.table(response.data);
         setData(response.data);
       })
       .catch((error) => {
