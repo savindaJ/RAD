@@ -27,15 +27,6 @@ const productController = {
     },
     findOne: async function findOne(req,res) {
         res.json(await Watch.deleteMany({}));
-        // Watch.deleteMany({});
-        // return {
-        //     "name": "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
-        //     "image":
-        //         "https://cdn.buyabans.com/media/catalog/product/cache/b26914b4315099761016f66ddcabadb6/w/e/web_7_42.jpg",
-        //     "rating": 5,
-        //     "price": 123
-
-
     }
 }
 
