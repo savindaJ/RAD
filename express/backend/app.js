@@ -4,6 +4,35 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var cors = require("cors");
+var env = require("dotenv");
+env.config(); // This will load the environment variables from the .env file
+const mongoose = require("mongoose");
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const connection = require('./db/connection');
+
+connection();
+
+// mongoose.connect(process.env.DB_URL);
+// console.log(process.env.SUCCESS_MSG);
+
+// const client = new MongoClient(process.env.DB_URL, {
+//   serverApi: {
+//     version: ServerApiVersion.v1,
+//     strict: true,
+//     deprecationErrors: true,
+//   }
+// });
+//
+// async function run() {
+//   try {
+//     await client.connect();
+//     await client.db("admin").command({ ping: 1 });
+//     console.log(process.env.SUCCESS_MSG);
+//   } finally {
+//     await client.close();
+//   }
+// }
+// run().catch(console.dir); // This will catch any errors that occur during the connection process
 
 var indexRouter = require("./routes/index");
 /**
@@ -56,3 +85,5 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
+
+// mongodb+srv://jayasekarasavinda44:LAn9leT0PobHA29Y@training1.6uhan9j.mongodb.net/?retryWrites=true&w=majority&appName=training1
